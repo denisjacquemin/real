@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     if params[:permalink]
-      @page = Page.find_by_permalink(params[:permalink])
+      @page = Page.by_permalink(params[:permalink], 1)[0]
       raise ActiveRecord::RecordNotFound, 'Page not found' if @page.nil?
     else
       @page = Page.find(params[:id])
