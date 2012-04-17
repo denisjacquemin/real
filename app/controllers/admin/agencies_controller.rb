@@ -1,4 +1,7 @@
 class Admin::AgenciesController < ApplicationController
+  
+  layout 'admin'
+  
   # GET /admin/agencies
   # GET /admin/agencies.json
   def index
