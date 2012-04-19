@@ -3,8 +3,7 @@ class PagesController < ApplicationController
   before_filter :current_agency
    
   def current_agency
-    @current_agency ||= session[:current_agency] &&
-      Agency.find_by_domain(request.host)
+    @current_agency = Admin::Agency.find_by_domain(request.host)
   end
    
   # GET /pages
