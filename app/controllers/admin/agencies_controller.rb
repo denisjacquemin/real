@@ -16,7 +16,8 @@ class Admin::AgenciesController < ApplicationController
   # GET /admin/agencies/1
   # GET /admin/agencies/1.json
   def show
-    @admin_agency = Admin::Agency.find(params[:id])
+    @admin_agency = Admin::Agency.where(:id => params[:id]).includes(:pages)[0]
+    
 
     respond_to do |format|
       format.html # show.html.erb
