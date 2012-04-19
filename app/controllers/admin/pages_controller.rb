@@ -1,15 +1,9 @@
-class PagesController < ApplicationController
-  
-  before_filter :current_agency
-   
-  def current_agency
-    @current_agency = Admin::Agency.find_by_domain(request.host)
-  end
-   
+class Admin::PagesController < ApplicationController
+     
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Admin::Page.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,12 +14,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    if params[:permalink]
-      @page = Page.by_permalink(params[:permalink], @current_agency.id)[0]
-      raise ActiveRecord::RecordNotFound, 'Page not found' if @page.nil?
-    else
-      @page = Page.find(params[:id])
-    end
+    @page = Admin::Page.find(params[:id])
     
     respond_to do |format|
       format.html # show.html.erb
@@ -36,7 +25,7 @@ class PagesController < ApplicationController
   # GET /pages/new
   # GET /pages/new.json
   def new
-    @page = Page.new
+    @page = Admin::Page.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,13 +35,13 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @page = Page.find(params[:id])
+    @page = Admin::Page.find(params[:id])
   end
 
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(params[:page])
+    @page = Admin::Page.new(params[:admin_page])
 
     respond_to do |format|
       if @page.save
@@ -68,10 +57,10 @@ class PagesController < ApplicationController
   # PUT /pages/1
   # PUT /pages/1.json
   def update
-    @page = Page.find(params[:id])
+    @page = Admin::Page.find(params[:id])
 
     respond_to do |format|
-      if @page.update_attributes(params[:page])
+      if @page.update_attributes(params[:admin_page])
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
@@ -84,7 +73,7 @@ class PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
-    @page = Page.find(params[:id])
+    @page = Admin::Page.find(params[:id])
     @page.destroy
 
     respond_to do |format|

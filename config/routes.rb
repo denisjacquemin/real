@@ -1,11 +1,10 @@
 Pages::Application.routes.draw do
   namespace :admin do 
-    resources :agencies 
+    resources :agencies
+    resources :pages
   end
-
-  resources :pages
   
-  match ':permalink' => 'pages#show'
+  match ':permalink' => 'sites#show'
 
-  root :to => 'pages#show', :permalink => 'home'
+  root :to => 'sites#show', :permalink => 'home'
 end
