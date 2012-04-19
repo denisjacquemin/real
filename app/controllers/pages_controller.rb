@@ -1,4 +1,12 @@
 class PagesController < ApplicationController
+  
+  before_filter :current_agency
+   
+  def current_agency
+    @current_agency ||= session[:current_agency] &&
+      Agency.find_by_domain(request.host)
+  end
+   
   # GET /pages
   # GET /pages.json
   def index
@@ -14,7 +22,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     if params[:permalink]
-      @page = Page.by_permalink(params[:permalink], 1)[0]
+      @page = Page.by_permalink(params[:permalink], @current_agency.id)[0]
       raise ActiveRecord::RecordNotFound, 'Page not found' if @page.nil?
     else
       @page = Page.find(params[:id])
