@@ -3,7 +3,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Admin::Page.all
+    @pages = Admin::Page.by_agency(@current_agency.id)
 
     respond_to do |format|
       format.html # index.html.erb
