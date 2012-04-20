@@ -1,4 +1,7 @@
 class Admin::ItemsController < ApplicationController
+  
+  layout 'admin'
+  
   # GET /admin/items
   # GET /admin/items.json
   def index
