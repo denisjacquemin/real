@@ -26,7 +26,12 @@
   </head>
 
   <body>
-    <a href="/">web site</a>
+    <ul>
+      <li><%= link_to 'Website', root_path %></li>
+      <li><%= link_to 'Pages', admin_pages_path %></li>
+      <li><%= link_to 'Items', admin_items_path %></li>
+      <li><%= link_to 'Agency Details', edit_admin_agency_path(@current_agency) %></li>
+    </ul>
     <%= yield %>
   </body>
 </html>
