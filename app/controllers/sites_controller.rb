@@ -1,11 +1,4 @@
 class SitesController < ApplicationController
-  
-  before_filter :current_agency
-   
-  def current_agency
-    @current_agency = Admin::Agency.find_by_domain(request.host)
-  end
-
 
   # GET /pages/1
   # GET /pages/1.json
