@@ -30,4 +30,13 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+  <% @categories.each do |category| %>
+    <h3><%= category.label %></h3>
+    <ul>
+      <% category.fields.each do |field| %>
+        <li><%= field.label %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>

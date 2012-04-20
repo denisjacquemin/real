@@ -38,6 +38,7 @@ class Admin::ItemsController < ApplicationController
   # GET /admin/items/1/edit
   def edit
     @admin_item = Admin::Item.find(params[:id])
+    @categories = @current_agency.categories
   end
 
   # POST /admin/items
