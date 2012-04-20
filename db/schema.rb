@@ -21,10 +21,12 @@ ActiveRecord::Schema.define(:version => 20120420062122) do
   end
 
   create_table "admin_items", :force => true do |t|
-    t.integer  "type"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "type_id"
     t.integer  "agency_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "admin_pages", :force => true do |t|

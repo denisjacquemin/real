@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <th>Type</th>
-    <th>Agency</th>
+    <th>Title</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +10,7 @@
 
 <% @admin_items.each do |admin_item| %>
   <tr>
-    <td><%= admin_item.type %></td>
-    <td><%= admin_item.agency_id %></td>
+    <td><%= admin_item.title %></td>
     <td><%= link_to 'Show', admin_item %></td>
     <td><%= link_to 'Edit', edit_admin_item_path(admin_item) %></td>
     <td><%= link_to 'Destroy', admin_item, confirm: 'Are you sure?', method: :delete %></td>

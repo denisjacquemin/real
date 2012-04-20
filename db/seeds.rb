@@ -58,3 +58,4 @@ Admin::Page.create(:title => 'contact real website',
             :template => 1,
             :agency_id => real.id,
             :content => '<a href="mailto:denis.jacquemin@gmail.com"')
+Admin::Item.create(:title => 'Villa 4 facades', :description => 'Superbe villa 4 facade a renover en plein centre, proximite de tout, 5min gare', :type_id => 1, :agency_id => real.id)
