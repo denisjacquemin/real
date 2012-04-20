@@ -1,4 +1,6 @@
 Pages::Application.routes.draw do
+  namespace :admin do resources :items end
+
   namespace :admin do 
     resources :agencies
     resources :pages
