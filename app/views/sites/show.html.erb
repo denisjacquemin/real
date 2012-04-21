@@ -12,5 +12,5 @@
 
 <p>
   <b>Content:</b>
-  <%= raw Liquid::Template.parse(@page.content).render('agency' => @current_agency) %>
+  <%= raw liquidize @page.content, 'agency' => @current_agency %>
 </p>
