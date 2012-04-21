@@ -12,5 +12,5 @@
 
 <p>
   <b>Content:</b>
-  <%= simple_format @page.content %>
+  <%= raw Liquid::Template.parse(@page.content).render('agency' => @current_agency) %>
 </p>
