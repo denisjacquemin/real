@@ -1,4 +1,6 @@
 class SitesController < ApplicationController
+  
+  layout 'website'
 
   # GET /pages/1
   # GET /pages/1.json
