@@ -23,10 +23,24 @@
     <%= f.label :template %><br />
     <%= f.number_field :template %>
   </div>
+  <style>
+      #editor {
+          position: absolute;
+          width: 600px;
+          height: 500px;
+          margin-left: 300px;
+      }
+  </style>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :style => 'display:none' %>
+    <div id="editor"><%= @page.content %></div>
   </div>
+  <script>
+      window.onload = function() {
+          var editor = ace.edit("editor");
+      };
+      </script>
   <div class="field">
     <%= f.label :agency_id %><br />
     <%= f.number_field :agency_id %>
