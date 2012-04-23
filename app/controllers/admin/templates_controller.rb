@@ -19,7 +19,7 @@ class Admin::TemplatesController < ApplicationController
 
   # GET /admin/templates/1/edit
   def edit
-    @admin_template = Admin::Template.find(params[:id])
+    @template = Admin::Template.find(params[:id])
     @pages = Admin::Page.by_agency(@current_agency.id)
     @templates = Admin::Template.by_agency(@current_agency.id)
   end

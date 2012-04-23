@@ -1,10 +1,10 @@
-<%= form_for(@admin_template) do |f| %>
-  <% if @admin_template.errors.any? %>
+<%= form_for(@template) do |f| %>
+  <% if @template.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@admin_template.errors.count, "error") %> prohibited this admin_template from being saved:</h2>
+      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this admin_template from being saved:</h2>
 
       <ul>
-      <% @admin_template.errors.full_messages.each do |msg| %>
+      <% @template.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

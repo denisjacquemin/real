@@ -3,33 +3,12 @@ class Admin::PagesController < ApplicationController
   before_filter :authenticate_user!
   
   layout 'admin'
-     
-  # GET /pages
-  # GET /pages.json
-  def index
-    @pages = Admin::Page.by_agency(@current_agency.id)
-    @templates = Admin::Template.by_agency(@current_agency.id)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pages }
-    end
-  end
-
-  # GET /pages/1
-  # GET /pages/1.json
-  def show
-    @page = Admin::Page.find(params[:id])
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @page }
-    end
-  end
 
   # GET /pages/new
   # GET /pages/new.json
   def new
+    @pages = Admin::Page.by_agency(@current_agency.id)
+    @templates = Admin::Template.by_agency(@current_agency.id)
     @page = Admin::Page.new
 
     respond_to do |format|
