@@ -1,0 +1,8 @@
+<div class="well" style="padding: 8px 0;">  
+  <ul class="nav nav-list">
+    <li class="nav-header">Pages Templates</li>
+    <% @pages.each do |admin_page| %>
+      <li <%= 'class=active' if !@page.nil? and admin_page.title == @page.title  %> ><%= link_to admin_page.title, edit_admin_page_path(admin_page) %></li>
+    <% end %>
+  </ul>
+</div>

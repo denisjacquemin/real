@@ -1,5 +1,7 @@
 class Admin::AgenciesController < ApplicationController
   
+  before_filter :authenticate_user!
+  
   layout 'admin'
   
   # GET /admin/agencies

@@ -1,4 +1,7 @@
 class Admin::FieldsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /admin/fields
   # GET /admin/fields.json
   def index

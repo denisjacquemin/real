@@ -1,4 +1,7 @@
 class Admin::CategoriesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /admin/categories
   # GET /admin/categories.json
   def index

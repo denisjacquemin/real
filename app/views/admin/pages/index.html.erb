@@ -1,27 +1,5 @@
-<h1>Listing pages</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Template</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @pages.each do |admin_page| %>
-  <tr>
-    <td><%= admin_page.title %></td>
-    <td><%= admin_page.template %></td>
-    <td><%= admin_page.content %></td>
-    <td><%= link_to 'Show', admin_page %></td>
-    <td><%= link_to 'Edit', edit_admin_page_path(admin_page) %></td>
-    <td><%= link_to 'Destroy', admin_page, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% content_for :sidebar do %>
+  <%= render 'sidebar' %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Page', new_admin_page_path %>
+<%= link_to 'New Page', new_admin_page_path, :class => 'btn' %>
+<%= link_to 'New Template', new_admin_page_path, :class => 'btn' %>

@@ -1,5 +1,7 @@
 class Admin::ItemsController < ApplicationController
   
+  before_filter :authenticate_user!
+
   layout 'admin'
   
   # GET /admin/items

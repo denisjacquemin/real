@@ -1,4 +1,6 @@
 class Admin::PagesController < ApplicationController
+
+  before_filter :authenticate_user!
   
   layout 'admin'
      
@@ -37,6 +39,7 @@ class Admin::PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
+    @pages = Admin::Page.by_agency(@current_agency.id)
     @page = Admin::Page.find(params[:id])
   end
 
