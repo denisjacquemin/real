@@ -9,10 +9,11 @@
       <a href="#" class="brand">Real Admin</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to 'Public Website', root_path, :target => '_blank' %></li>
           <li><%= link_to 'Themes', admin_themes_index_path %></li>
           <li><%= link_to 'Items', admin_items_path %></li>
           <li><%= link_to 'Agency Details', edit_admin_agency_path(@current_agency) %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to 'Public Website', root_path, :target => '_blank' %></li>
         </ul>
         <p class="navbar-text pull-right">Logged in as <%= current_user.email %></p>
       </div><!--/.nav-collapse -->
