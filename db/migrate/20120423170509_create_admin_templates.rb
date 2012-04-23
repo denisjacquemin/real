@@ -1,6 +1,6 @@
-class CreateTemplates < ActiveRecord::Migration
+class CreateAdminTemplates < ActiveRecord::Migration
   def change
-    create_table :templates do |t|
+    create_table :admin_templates do |t|
       t.string :title
       t.text :content
       t.integer :agency_id

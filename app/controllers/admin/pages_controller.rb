@@ -8,6 +8,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages.json
   def index
     @pages = Admin::Page.by_agency(@current_agency.id)
+    @templates = Admin::Template.by_agency(@current_agency.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,6 +41,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @pages = Admin::Page.by_agency(@current_agency.id)
+    @templates = Admin::Template.by_agency(@current_agency.id)
     @page = Admin::Page.find(params[:id])
   end
 
@@ -47,7 +49,8 @@ class Admin::PagesController < ApplicationController
   # POST /pages.json
   def create
     @page = Admin::Page.new(params[:admin_page])
-
+    @page.agency_id = @current_agency.id
+    
     respond_to do |format|
       if @page.save
         format.html { redirect_to @page, notice: 'Page was successfully created.' }

@@ -2,14 +2,12 @@ Pages::Application.routes.draw do
   
   devise_for :users
 
-  namespace :admin do resources :fields end
-
-  namespace :admin do resources :categories end
-
-  namespace :admin do resources :items end
-
   namespace :admin do 
     resources :agencies
+    resources :items
+    resources :categories
+    resources :fields
+    resources :templates, :except  => [:index]
     resources :pages
   end
   

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @admin_template.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @admin_template.content %>
+</p>
+
+<p>
+  <b>Agency:</b>
+  <%= @admin_template.agency_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_template_path(@admin_template) %> |
+<%= link_to 'Back', admin_templates_path %>

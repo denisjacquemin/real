@@ -1,6 +1,12 @@
 <div class="well" style="padding: 8px 0;">  
   <ul class="nav nav-list">
-    <li class="nav-header">Pages Templates</li>
+    <li class="nav-header">Templates</li>
+    <% @templates.each do |admin_template| %>
+      <li <%= 'class=active' if !@template.nil? and admin_template.title == @template.title  %> ><%= link_to admin_template.title, edit_admin_template_path(admin_template) %></li>
+    <% end %>
+  </ul>
+  <ul class="nav nav-list">
+    <li class="nav-header">Pages</li>
     <% @pages.each do |admin_page| %>
       <li <%= 'class=active' if !@page.nil? and admin_page.title == @page.title  %> ><%= link_to admin_page.title, edit_admin_page_path(admin_page) %></li>
     <% end %>
