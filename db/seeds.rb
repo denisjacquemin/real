@@ -6,11 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 real = Admin::Agency.create(:name => 'Real WebSite', :domain => 'localhost')
+template = Admin::Template.create(:title => 'Dark Shadow', :content => '<rien>', :agency_id => real.id)
+
 Admin::Page.create(:title => 'home real website', 
             :permalink => 'home',
-            :template => 1,
+            :template_id => template.id,
             :agency_id => real.id,
             :content => '<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
@@ -55,7 +56,7 @@ Admin::Page.create(:title => 'home real website',
 </div>')
 Admin::Page.create(:title => 'contact real website', 
             :permalink => 'contact',
-            :template => 1,
+            :template_id => template.id,
             :agency_id => real.id,
             :content => '<a href="mailto:denis.jacquemin@gmail.com"')
 Admin::Item.create(:title => 'Villa 4 facades', :description => 'Superbe villa 4 facade a renover en plein centre, proximite de tout, 5min gare', :type_id => 1, :agency_id => real.id)

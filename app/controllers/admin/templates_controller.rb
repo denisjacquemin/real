@@ -7,7 +7,7 @@ class Admin::TemplatesController < ApplicationController
   # GET /admin/templates/new
   # GET /admin/templates/new.json
   def new
-    @admin_template = Admin::Template.new
+    @template = Admin::Template.new
     @pages = Admin::Page.by_agency(@current_agency.id)
     @templates = Admin::Template.by_agency(@current_agency.id)
 

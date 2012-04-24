@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423165328) do
+ActiveRecord::Schema.define(:version => 20120423170509) do
 
   create_table "admin_agencies", :force => true do |t|
     t.string   "name"
@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(:version => 20120423165328) do
   create_table "admin_pages", :force => true do |t|
     t.string   "title"
     t.string   "permalink"
-    t.integer  "template"
+    t.integer  "template_id"
     t.text     "content"
     t.integer  "agency_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "admin_templates", :force => true do |t|

@@ -3,7 +3,7 @@ class CreateAdminPages < ActiveRecord::Migration
     create_table :admin_pages do |t|
       t.string :title
       t.string :permalink
-      t.integer :template
+      t.integer :template_id
       t.text :content
       t.integer :agency_id
 
