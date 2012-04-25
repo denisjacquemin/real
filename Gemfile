@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'liquid'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'paperclip'
 
 
 # Gems used only for assets and not required

@@ -8,8 +8,10 @@ class SitesController < ApplicationController
     @page = Admin::Page.by_permalink(params[:permalink], @current_agency.id)[0]
     raise ActiveRecord::RecordNotFound, 'Page not found' if @page.nil?
     
+    puts "@page.title: #{@page.title}"
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => false}
       format.json { render json: @page }
     end
   end
