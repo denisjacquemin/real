@@ -10,10 +10,8 @@
       </ul>
     </div>
   <% end %>
-  <%= f.submit :class => 'btn btn-primary align-right' %>
+  <span class="clear"></span>
   <%= f.text_area :content, :style => 'display:none' %>
   <div id="editor"></div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit :class => 'btn btn-primary align-right' %>
 <% end %>

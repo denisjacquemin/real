@@ -12,7 +12,17 @@
       <li <%= 'class=active' if !@page.nil? and admin_page.title == @page.title  %> ><%= link_to admin_page.title, edit_admin_page_path(admin_page) %></li>
     <% end %>
     <li><%= link_to "New Page...", new_admin_template_path %></li>
-
   </ul>
-  
+  <ul class="nav nav-list">
+    <li class="nav-header">Javascripts</li>
+    <li><%= link_to "New Javascript...", new_admin_template_path %></li>
+  </ul>
+  <ul class="nav nav-list">
+    <li class="nav-header">Stylesheets</li>
+    <li><%= link_to "New Stylesheet...", new_admin_template_path %></li>
+  </ul>
+  <ul class="nav nav-list">
+    <li class="nav-header">Images</li>
+    <li><%= link_to "Upload Image...", new_admin_template_path %></li>
+  </ul>
 </div>

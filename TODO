@@ -1,11 +1,7 @@
-create Model Template
+Un nouveau model
 
-Un Template contient un nom (title), 
-du code (content), une liste de css, 
-une liste de js et une reference vers son agence (agency_id)
-
-Un nouveau model sera Asset, il contiendra un nom (title), un contenu (content), 
-un type (type) javascript ou stylesheet
-une reference vers son agency_id
-
-Un nouveau model sera 
+title
+content
+type
+agency_id
+template_id

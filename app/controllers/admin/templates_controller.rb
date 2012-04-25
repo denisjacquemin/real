@@ -48,7 +48,7 @@ class Admin::TemplatesController < ApplicationController
 
     respond_to do |format|
       if @admin_template.update_attributes(params[:admin_template])
-        format.html { redirect_to @admin_template, notice: 'Template was successfully updated.' }
+        format.html { redirect_to edit_admin_template_path(@admin_template), notice: 'Template was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
