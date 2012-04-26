@@ -5,7 +5,7 @@ class SitesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Admin::Page.by_permalink(params[:permalink], @current_agency.id)[0]
+    @page = Admin::Component.page.by_permalink(params[:permalink], @current_agency.id)[0]
     raise ActiveRecord::RecordNotFound, 'Page not found' if @page.nil?
     
     puts "@page.title: #{@page.title}"

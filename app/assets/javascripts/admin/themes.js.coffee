@@ -1,7 +1,7 @@
 # apply ace to the #editor element
 editor = ace.edit('editor')
 textarea = $('#editor').prev('textarea')
-# editor.getSession().setMode("ace/mode/html")
+#editor.getSession().setMode("ace/mode/html")
 editor.setTheme("ace/theme/twilight")
 editor.getSession().setValue(textarea.val())
 

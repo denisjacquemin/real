@@ -4,10 +4,10 @@
 <% content_for :breadcrumbs do %>
   <ul class="breadcrumb">
     <li><a href="#">Themes</a> <span class="divider">/</span></li>
-    <li class="active">Editing <%= @template.title %></li>
+    <li class="active">Editing <%= @component.title %></li>
   </ul>
 <% end %>
 <div class="block">
-  <h1>Editing Template <%= @template.title %></h1>
+  <h1>New <%= @component.component_type.label %></h1>
   <%= render 'form' %>
 </div>

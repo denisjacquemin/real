@@ -7,7 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 real = Admin::Agency.create(:name => 'Real WebSite', :domain => 'localhost')
-template = Admin::Template.create(:title => 'Dark Shadow', :content => '<!DOCTYPE html>
+component_template = Admin::ComponentType.create(:label => 'Template')
+component_page = Admin::ComponentType.create(:label => 'Page')
+component_stylesheet = Admin::ComponentType.create(:label => 'Stylesheet')
+component_javascript = Admin::ComponentType.create(:label => 'Javascript')
+
+
+template = Admin::Component.create(:title => 'Dark Shadow', :component_type_id => component_template.id, :content => '<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -115,12 +121,14 @@ template = Admin::Template.create(:title => 'Dark Shadow', :content => '<!DOCTYP
   </body>
 </html>', :agency_id => real.id)
 
-Admin::Page.create(:title => 'home real website', 
+Admin::Component.create(:title => 'home real website', 
+            :component_type_id => component_page.id,
             :permalink => 'home',
             :template_id => template.id,
             :agency_id => real.id,
             :content => '<h1>Welcome Home my friend</h1>')
-Admin::Page.create(:title => 'contact real website', 
+Admin::Component.create(:title => 'contact real website', 
+            :component_type_id => component_page.id,
             :permalink => 'contact',
             :template_id => template.id,
             :agency_id => real.id,

@@ -1,5 +1,5 @@
 Pages::Application.routes.draw do
-
+  
   devise_for :users
 
   namespace :admin do 
@@ -8,8 +8,7 @@ Pages::Application.routes.draw do
     resources :items
     resources :categories
     resources :fields
-    resources :templates, :except  => [:index, :show]
-    resources :pages, :except => [:index, :show]
+    resources :components, :except  => [:index, :show]
   end
   
   match ':permalink' => 'sites#show'

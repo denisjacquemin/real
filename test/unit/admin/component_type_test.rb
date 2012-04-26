@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::TemplateTest < ActiveSupport::TestCase
+class Admin::ComponentTypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

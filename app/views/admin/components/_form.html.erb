@@ -1,16 +1,15 @@
-<%= form_for(@template) do |f| %>
-  <% if @template.errors.any? %>
+<%= form_for(@component) do |f| %>
+  <% if @component.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this admin_template from being saved:</h2>
+      <h2><%= pluralize(@component.errors.count, "error") %> prohibited this template from being saved:</h2>
 
       <ul>
-      <% @template.errors.full_messages.each do |msg| %>
+      <% @component.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  <span class="clear"></span>
   <%= f.text_area :content, :style => 'display:none' %>
   <div id="editor"></div>
   <%= f.submit :class => 'btn btn-primary align-right' %>

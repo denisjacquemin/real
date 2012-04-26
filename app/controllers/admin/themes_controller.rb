@@ -5,7 +5,6 @@ class Admin::ThemesController < ApplicationController
   layout 'admin'
 
   def index
-    @pages = Admin::Page.by_agency(@current_agency.id)
-    @templates = Admin::Template.by_agency(@current_agency.id)
+    @components = Admin::Component.by_agency(@current_agency.id)
   end
 end
