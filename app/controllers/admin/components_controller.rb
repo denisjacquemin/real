@@ -8,6 +8,7 @@ class Admin::ComponentsController < ApplicationController
   # GET /admin/components/new.json
   def new
     @components = Admin::Component.by_agency(@current_agency.id)
+    @templates = Admin::Component.template.by_agency(@current_agency.id)
     @component = Admin::Component.new
     @component.component_type_id = params[:type]
 
@@ -20,6 +21,7 @@ class Admin::ComponentsController < ApplicationController
   # GET /admin/components/1/edit
   def edit
     @components = Admin::Component.by_agency(@current_agency.id)
+    @templates = Admin::Component.template.by_agency(@current_agency.id)
     @component = Admin::Component.find(params[:id])
   end
 
@@ -31,7 +33,7 @@ class Admin::ComponentsController < ApplicationController
 
     respond_to do |format|
       if @component.save
-        format.html { redirect_to @component, notice: 'Component was successfully created.' }
+        format.html { redirect_to edit_admin_component_path(@component), notice: 'Component was successfully created.' }
         format.json { render json: @component, status: :created, location: @component }
       else
         format.html { render action: "new" }
@@ -43,15 +45,15 @@ class Admin::ComponentsController < ApplicationController
   # PUT /admin/components/1
   # PUT /admin/components/1.json
   def update
-    @admin_component = Admin::Component.find(params[:id])
+    @component = Admin::Component.find(params[:id])
 
     respond_to do |format|
-      if @admin_component.update_attributes(params[:admin_component])
-        format.html { redirect_to @admin_component, notice: 'Component was successfully updated.' }
+      if @component.update_attributes(params[:admin_component])
+        format.html { redirect_to edit_admin_component_path(@component), notice: 'Component was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_component.errors, status: :unprocessable_entity }
+        format.json { render json: @component.errors, status: :unprocessable_entity }
       end
     end
   end

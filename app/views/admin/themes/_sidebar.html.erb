@@ -2,7 +2,7 @@
   <ul class="nav nav-list">
     <li class="nav-header">Templates</li>
     <% @components.each do |component| %>
-      <% if component.component_type.id == 1 %>
+      <% if !component.component_type.nil? and component.component_type.id == 1 %>
         <li <%= 'class=active' if !@component.nil? and component.title == @component.title  %> ><%= link_to component.title, edit_admin_component_path(component) %></li>
       <% end %>
     <% end %>
@@ -11,10 +11,43 @@
   <ul class="nav nav-list">
     <li class="nav-header">Pages</li>
     <% @components.each do |component| %>
-      <% if component.component_type.id == 2 %>
+      <% if !component.component_type.nil? and component.component_type.id == 2 %>
         <li <%= 'class=active' if !@component.nil? and component.title == @component.title  %> ><%= link_to component.title, edit_admin_component_path(component) %></li>
       <% end %>
     <% end %>
     <li><%= link_to 'New Page...', new_admin_component_path(:type => 2) %></li>
+  </ul>
+  <ul class="nav nav-list">
+    <li class="nav-header">Stylesheets</li>
+    <% @components.each do |component| %>
+      <% if !component.component_type.nil? and component.component_type.id == 3 %>
+        <li <%= 'class=active' if !@component.nil? and component.title == @component.title  %> ><%= link_to component.title, edit_admin_component_path(component) %></li>
+      <% end %>
+    <% end %>
+    <li><%= link_to 'New Stylesheet...', new_admin_component_path(:type => 3) %></li>
+  </ul>
+  <ul class="nav nav-list">
+    <li class="nav-header">Javascripts</li>
+    <% @components.each do |component| %>
+      <% if !component.component_type.nil? and component.component_type.id == 4 %>
+        <li <%= 'class=active' if !@component.nil? and component.title == @component.title  %> ><%= link_to component.title, edit_admin_component_path(component) %></li>
+      <% end %>
+    <% end %>
+    <li><%= link_to 'New Javascript...', new_admin_component_path(:type => 4) %></li>
+  </ul>
+  <ul class="nav nav-list">
+    <li class="nav-header">Assets</li>
+
+    <li><%= link_to 'Upload Asset(s)...', '#' %></li>
+  </ul>
+</div>
+<div class="well">
+  <ul>
+  <li>page.title</li>
+  <li>page.content</li>
+  <li>agency.name</li>
+  <li>agency.items</li>
+  <li>item.title</li>
+  <li>item.description</li>
   </ul>
 </div>

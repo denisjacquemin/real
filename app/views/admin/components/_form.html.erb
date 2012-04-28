@@ -10,7 +10,19 @@
       </ul>
     </div>
   <% end %>
+  <%= f.submit "Save #{@component.component_type.label}", :class => 'btn btn-primary align-right' %>
+  
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <% if @component.component_type_id == 2 %>
+    <%= f.label :permalink %>
+    <%= f.text_field :permalink %>
+    <%= f.label :template %>
+    <%= f.collection_select :template_id, @templates, :id, :title %>
+  <% end %>
   <%= f.text_area :content, :style => 'display:none' %>
   <div id="editor"></div>
-  <%= f.submit :class => 'btn btn-primary align-right' %>
+  <div class="form-actions">
+    <%= f.submit "Save #{@component.component_type.label}", :class => 'btn btn-primary' %>
+  </div>
 <% end %>

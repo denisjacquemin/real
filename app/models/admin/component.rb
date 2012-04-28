@@ -12,5 +12,5 @@ class Admin::Component < ActiveRecord::Base
   scope :javascript, where(:component_type_id => 4)
   
   
-  liquid_methods :title, :content
+  liquid_methods :title, :content, :permalink
 end
